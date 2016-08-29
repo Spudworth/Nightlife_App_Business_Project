@@ -22,6 +22,7 @@ public class Adverts {
     }
 
     public Adverts() {
+        this("No title","No description","No start date","no end date");
 
     }
 
