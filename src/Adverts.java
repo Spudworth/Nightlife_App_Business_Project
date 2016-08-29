@@ -1,5 +1,5 @@
 /**
- * Created by X99-A on 29-Aug-16.
+ * Created by Sean Healy on 29-Aug-16.
  */
 import java.util.*;
 public class Adverts {
@@ -8,18 +8,23 @@ public class Adverts {
 
     private int advertID;
     private String title;
-    private String [] description;
-    private Date startDate;
-    private Date endDate;
+    private String description;
+    private String startDate;
+    private String endDate;
 
 
-    public Adverts(String title, String[] description, Date startDate, Date endDate){
+    public Adverts(String title, String description, String startDate, String endDate){
 
         setTitle(title);
         setDescription(description);
         setStartDate(startDate);
         setEndDate(endDate);
     }
+
+    public Adverts() {
+
+    }
+
 
     public int getAdvertID() {
         return advertID;
@@ -33,27 +38,27 @@ public class Adverts {
         this.title = title;
     }
 
-    public String[] getDescription() {
+    public String getDescription() {
         return description;
     }
 
-    public void setDescription(String[] description) {
+    public void setDescription(String description) {
         this.description = description;
     }
 
-    public Date getStartDate() {
+    public String getStartDate() {
         return startDate;
     }
 
-    public void setStartDate(Date startDate) {
+    public void setStartDate(String startDate) {
         this.startDate = startDate;
     }
 
-    public Date getEndDate() {
+    public String getEndDate() {
         return endDate;
     }
 
-    public void setEndDate(Date endDate) {
+    public void setEndDate(String endDate) {
         this.endDate = endDate;
     }
 
