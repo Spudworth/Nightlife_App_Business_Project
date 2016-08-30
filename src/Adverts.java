@@ -108,14 +108,16 @@ public class Adverts {
         setStartDate(JOptionPane.showInputDialog("Please enter advert start date (DD/MM/YY)"));
         setEndDate(JOptionPane.showInputDialog("Please enter advert end date (DD/MM/YY)"));
         setActive(true);
-        JOptionPane.showConfirmDialog(null,"Would you like to sponsor your advert for extra reach?","Sponsorship",JOptionPane.YES_NO_OPTION);
-        if(JOptionPane.YES_NO_OPTION == JOptionPane.YES_OPTION) {
+        if(JOptionPane.showConfirmDialog(null,"Would you like to sponsor your advert for extra reach?","Sponsorship",JOptionPane.YES_NO_OPTION)== JOptionPane.YES_OPTION) {
             String creditCardNo = JOptionPane.showInputDialog("Please enter your credit card number");
             if (creditCardNo.matches("[0-9]+") && creditCardNo.length() == 16) {
                 setSponsored(true);
             } else
                 JOptionPane.showMessageDialog(null, "Invalid entry!", "Error", JOptionPane.ERROR_MESSAGE);
         }
+        else
+            System.exit(0);
+
     }
 
     public void amendAdvert() {
@@ -125,14 +127,16 @@ public class Adverts {
             setDescription(JOptionPane.showInputDialog("Please enter amended advert description"));
             setStartDate(JOptionPane.showInputDialog("Please enter amended advert start date (DD/MM/YY)"));
             setEndDate(JOptionPane.showInputDialog("Please enter amended advert end date (DD/MM/YY)"));
-            JOptionPane.showConfirmDialog(null,"Would you like to sponsor your advert for extra reach?","Sponsorship",JOptionPane.YES_NO_OPTION);
-            if(JOptionPane.YES_NO_OPTION == JOptionPane.YES_OPTION) {
+            if(JOptionPane.showConfirmDialog(null,"Would you like to sponsor your advert for extra reach?","Sponsorship",JOptionPane.YES_NO_OPTION) ==JOptionPane.YES_OPTION) {
                 String creditCardNo = JOptionPane.showInputDialog("Please enter your credit card number");
                 if (creditCardNo.matches("[0-9]+") && creditCardNo.length() == 16) {
                     setSponsored(true);
                 } else
                     JOptionPane.showMessageDialog(null, "Invalid entry!", "Error", JOptionPane.ERROR_MESSAGE);
             }
+            else
+                System.exit(0);
+
         }
 
         else
