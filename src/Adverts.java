@@ -15,16 +15,19 @@ public class Adverts {
     private boolean isSponsored = false;
 
 
-    public Adverts(String title, String description, String startDate, String endDate){
+    public Adverts(Integer advertID, String title, String description, String startDate, String endDate, Boolean isActive, Boolean isSponsored){
 
+        setAdvertID(advertID);
         setTitle(title);
         setDescription(description);
         setStartDate(startDate);
         setEndDate(endDate);
+        setActive(isActive);
+        setSponsored(isSponsored);
     }
 
     public Adverts() {
-        this("No title","No description","No start date","no end date");
+        this(0,"No title","No description","No start date","no end date",false,false);
 
     }
 
