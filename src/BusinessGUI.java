@@ -9,10 +9,11 @@ import java.awt.event.ActionListener;
 public class BusinessGUI extends JFrame implements ActionListener {
 
     private Container cPane;
-    private JPanel backImg;
+    private JTextArea textArea;
     private JButton createButton;
     private JButton amendButton;
     private JButton deleteButton;
+    private JButton displayButton;
     Adverts exampleAdvert;
 
     public BusinessGUI(){
@@ -40,6 +41,11 @@ public class BusinessGUI extends JFrame implements ActionListener {
         deleteButton = new JButton("Delete Advert");
         cPane.add(deleteButton);
         deleteButton.addActionListener(this);
+
+        displayButton = new JButton("Display Advert");
+        cPane.add(displayButton);
+        displayButton.addActionListener(this);
+
     }
 
 
@@ -55,6 +61,9 @@ public class BusinessGUI extends JFrame implements ActionListener {
         else if(actionEvent.getActionCommand().equals("Delete Advert")){
             getAndAmendInfo();
             deleteAdvert();
+        }
+        else if(actionEvent.getActionCommand().equals("Display Advert")){
+            displayAdvert();
         }
 
     }
@@ -110,4 +119,5 @@ public class BusinessGUI extends JFrame implements ActionListener {
         System.exit(0);
 
     }
+
 }
