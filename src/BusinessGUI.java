@@ -45,7 +45,6 @@ public class BusinessGUI extends JFrame implements ActionListener {
         displayButton = new JButton("Display Advert");
         cPane.add(displayButton);
         displayButton.addActionListener(this);
-
     }
 
 
@@ -65,24 +64,15 @@ public class BusinessGUI extends JFrame implements ActionListener {
         else if(actionEvent.getActionCommand().equals("Display Advert")){
             displayAdvert();
         }
-
     }
 
     private void deleteAdvert() {
-
         exampleAdvert.removeAdvert();
-
     }
-
-
 
     private void getAndAmendInfo() {
-
         exampleAdvert.amendAdvert();
-
     }
-
-
 
     private void inputAdvertInfo() {
         exampleAdvert = new Adverts();
@@ -90,14 +80,13 @@ public class BusinessGUI extends JFrame implements ActionListener {
 
     }
 
-
-
     private void displayAdvert(){
 
         textArea = new JTextArea();
         textArea.revalidate();
         textArea.append(exampleAdvert.toString());
         cPane.add(textArea);
+        textArea.revalidate();
 
     }
 
