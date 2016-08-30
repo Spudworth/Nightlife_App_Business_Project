@@ -61,6 +61,20 @@ public class BusinessGUI extends JFrame implements ActionListener {
 
     private void deleteAdvert() {
 
+        if(exampleAdvert.getIsActive() == true){
+
+           if(JOptionPane.showConfirmDialog(null,"Are you sure?","Warning",JOptionPane.YES_NO_OPTION) == JOptionPane.YES_OPTION){
+               exampleAdvert.setActive(false);
+               System.exit(0);
+           }
+           else
+               System.exit(0);
+        }
+        else
+            JOptionPane.showMessageDialog(null, "No advert to delete", "No Advert", JOptionPane.ERROR_MESSAGE);
+
+        System.exit(0);
+
     }
 
     private void getAndAmendInfo() {
@@ -71,11 +85,14 @@ public class BusinessGUI extends JFrame implements ActionListener {
             exampleAdvert.setDescription(JOptionPane.showInputDialog("Please enter amended advert description"));
             exampleAdvert.setStartDate(JOptionPane.showInputDialog("Please enter amended advert start date (DD/MM/YY)"));
             exampleAdvert.setEndDate(JOptionPane.showInputDialog("Please enter amended advert end date (DD/MM/YY)"));
+
+            System.exit(0);
         }
 
         else
          {
             JOptionPane.showMessageDialog(null, "No advert to amend", "No Advert", JOptionPane.ERROR_MESSAGE);
+             System.exit(0);
         }
 
     }
@@ -89,6 +106,8 @@ public class BusinessGUI extends JFrame implements ActionListener {
         exampleAdvert.setStartDate(JOptionPane.showInputDialog("Please enter advert start date (DD/MM/YY)"));
         exampleAdvert.setEndDate(JOptionPane.showInputDialog("Please enter advert end date (DD/MM/YY)"));
         exampleAdvert.setActive(true);
+
+        System.exit(0);
 
     }
 }
