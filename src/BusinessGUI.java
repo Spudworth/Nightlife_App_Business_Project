@@ -46,5 +46,26 @@ public class BusinessGUI extends JFrame implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent actionEvent) {
 
+        if(actionEvent.getActionCommand().equals("Create Advert")){
+            inputAdvertInfo();
+        }
+        else if (actionEvent.getActionCommand().equals("Amend Advert")){
+            getAndAmendInfo();
+        }
+        else if(actionEvent.getActionCommand().equals("Delete Advert")){
+            getAndAmendInfo();
+            deleteAdvert();
+        }
+
+    }
+
+    private void deleteAdvert() {
+    }
+
+    private void getAndAmendInfo() {
+    }
+
+    private void inputAdvertInfo() {
+
     }
 }
