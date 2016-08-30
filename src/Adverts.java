@@ -12,6 +12,7 @@ public class Adverts {
     private String startDate;
     private String endDate;
     private boolean isActive = false;
+    private boolean isSponsored = false;
 
 
     public Adverts(String title, String description, String startDate, String endDate){
@@ -79,6 +80,13 @@ public class Adverts {
     public boolean getIsActive() {
         return isActive;
     }
+    public boolean isSponsored() {
+        return isSponsored;
+    }
+
+    public void setSponsored(boolean sponsored) {
+        isSponsored = sponsored;
+    }
 
     @Override
     public String toString() {
@@ -88,7 +96,8 @@ public class Adverts {
                 " description = '" + description + '\n' +
                 " startDate = '" + startDate + '\n' +
                 " endDate = '" + endDate + '\n' +
-                " isActive = " + isActive;
+                " isActive = " + isActive+ '\n' +
+                "isSponsored =" + isSponsored;
     }
 
     public void createAdvert() {
@@ -99,6 +108,14 @@ public class Adverts {
         setStartDate(JOptionPane.showInputDialog("Please enter advert start date (DD/MM/YY)"));
         setEndDate(JOptionPane.showInputDialog("Please enter advert end date (DD/MM/YY)"));
         setActive(true);
+        JOptionPane.showConfirmDialog(null,"Would you like to sponsor your advert for extra reach?","Sponsorship",JOptionPane.YES_NO_OPTION);
+        if(JOptionPane.YES_NO_OPTION == JOptionPane.YES_OPTION) {
+            String creditCardNo = JOptionPane.showInputDialog("Please enter your credit card number");
+            if (creditCardNo.matches("[0-9]+") && creditCardNo.length() == 16) {
+                setSponsored(true);
+            } else
+                JOptionPane.showMessageDialog(null, "Invalid entry!", "Error", JOptionPane.ERROR_MESSAGE);
+        }
     }
 
     public void amendAdvert() {
@@ -108,6 +125,14 @@ public class Adverts {
             setDescription(JOptionPane.showInputDialog("Please enter amended advert description"));
             setStartDate(JOptionPane.showInputDialog("Please enter amended advert start date (DD/MM/YY)"));
             setEndDate(JOptionPane.showInputDialog("Please enter amended advert end date (DD/MM/YY)"));
+            JOptionPane.showConfirmDialog(null,"Would you like to sponsor your advert for extra reach?","Sponsorship",JOptionPane.YES_NO_OPTION);
+            if(JOptionPane.YES_NO_OPTION == JOptionPane.YES_OPTION) {
+                String creditCardNo = JOptionPane.showInputDialog("Please enter your credit card number");
+                if (creditCardNo.matches("[0-9]+") && creditCardNo.length() == 16) {
+                    setSponsored(true);
+                } else
+                    JOptionPane.showMessageDialog(null, "Invalid entry!", "Error", JOptionPane.ERROR_MESSAGE);
+            }
         }
 
         else
