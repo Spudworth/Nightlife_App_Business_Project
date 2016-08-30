@@ -59,7 +59,7 @@ public class BusinessGUI extends JFrame implements ActionListener {
             getAndAmendInfo();
         }
         else if(actionEvent.getActionCommand().equals("Delete Advert")){
-            getAndAmendInfo();
+            displayAdvert();
             deleteAdvert();
         }
         else if(actionEvent.getActionCommand().equals("Display Advert")){
@@ -116,7 +116,7 @@ public class BusinessGUI extends JFrame implements ActionListener {
         exampleAdvert.setEndDate(JOptionPane.showInputDialog("Please enter advert end date (DD/MM/YY)"));
         exampleAdvert.setActive(true);
 
-        
+
 
     }
 
@@ -125,6 +125,7 @@ public class BusinessGUI extends JFrame implements ActionListener {
         textArea.append(exampleAdvert.toString());
         cPane.add(textArea);
         cPane.revalidate();
+        cPane.repaint();
     }
 
 }
