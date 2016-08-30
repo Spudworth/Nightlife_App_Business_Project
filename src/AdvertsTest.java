@@ -99,4 +99,13 @@ public class AdvertsTest {
         assertFalse(testAd.getAdvertID() != 12);
     }
 
+    @Test
+    public void nextID() throws  Exception{
+        testAd = new Adverts();
+        testAd.setAdvertID(12);
+        testAd.nextID(testAd.getAdvertID());
+        assertTrue(testAd.getAdvertID() == 13);
+        assertFalse(testAd.getAdvertID() != 13);
+    }
+
 }
