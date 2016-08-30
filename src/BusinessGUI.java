@@ -67,5 +67,13 @@ public class BusinessGUI extends JFrame implements ActionListener {
 
     private void inputAdvertInfo() {
 
+        exampleAdvert = new Adverts();
+        exampleAdvert.nextID(exampleAdvert.getAdvertID());
+        exampleAdvert.setTitle(JOptionPane.showInputDialog("Please enter advert title"));
+        exampleAdvert.setDescription(JOptionPane.showInputDialog("Please enter advert description"));
+        exampleAdvert.setStartDate(JOptionPane.showInputDialog("Please enter advert start date (DD/MM/YY)"));
+        exampleAdvert.setEndDate(JOptionPane.showInputDialog("Please enter advert end date (DD/MM/YY)"));
+        exampleAdvert.setActive(true);
+
     }
 }

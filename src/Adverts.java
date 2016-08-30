@@ -9,6 +9,7 @@ public class Adverts {
     private String description;
     private String startDate;
     private String endDate;
+    private boolean isActive = false;
 
 
     public Adverts(String title, String description, String startDate, String endDate){
@@ -69,6 +70,9 @@ public class Adverts {
         nextID = advertID;
         nextID++;
         setAdvertID(nextID);
+    }
+    public void setActive(boolean active) {
+        isActive = active;
     }
 
  }
