@@ -95,7 +95,7 @@ public class BusinessGUI extends JFrame implements ActionListener {
             exampleAdvert.setStartDate(JOptionPane.showInputDialog("Please enter amended advert start date (DD/MM/YY)"));
             exampleAdvert.setEndDate(JOptionPane.showInputDialog("Please enter amended advert end date (DD/MM/YY)"));
 
-            System.exit(0);
+
         }
 
         else
@@ -116,13 +116,15 @@ public class BusinessGUI extends JFrame implements ActionListener {
         exampleAdvert.setEndDate(JOptionPane.showInputDialog("Please enter advert end date (DD/MM/YY)"));
         exampleAdvert.setActive(true);
 
-        System.exit(0);
+        
 
     }
 
     private void displayAdvert(){
+        textArea = new JTextArea();
         textArea.append(exampleAdvert.toString());
         cPane.add(textArea);
+        cPane.revalidate();
     }
 
 }

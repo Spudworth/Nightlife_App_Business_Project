@@ -80,13 +80,12 @@ public class Adverts {
 
     @Override
     public String toString() {
-        return "Adverts{" +
-                "advertID=" + advertID +
-                "/n, title='" + title + '\'' +
-                "/n, description='" + description + '\'' +
-                "/n, startDate='" + startDate + '\'' +
-                "/n, endDate='" + endDate + '\'' +
-                "/n, isActive=" + isActive +
-                '}';
+        return
+                "advertID = " + advertID + '\n' +
+                " title = '" + title + '\n' +
+                " description = '" + description + '\n' +
+                " startDate = '" + startDate + '\n' +
+                " endDate = '" + endDate + '\n' +
+                " isActive = " + isActive;
     }
 }
