@@ -91,4 +91,12 @@ public class AdvertsTest {
 
     }
 
+    @Test
+    public void setAdvertID() throws Exception{
+        testAd = new Adverts();
+        testAd.setAdvertID(12);
+        assertTrue(testAd.getAdvertID() == 12);
+        assertFalse(testAd.getAdvertID() != 12);
+    }
+
 }
