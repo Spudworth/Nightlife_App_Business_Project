@@ -1,10 +1,8 @@
 /**
  * Created by Sean Healy on 29-Aug-16.
  */
-import java.util.*;
+
 public class Adverts {
-
-
 
     private int advertID;
     private String title;
@@ -26,6 +24,9 @@ public class Adverts {
 
     }
 
+    public void setAdvertID(int advertID) {
+        this.advertID = advertID;
+    }
 
     public int getAdvertID() {
         return advertID;
@@ -61,6 +62,13 @@ public class Adverts {
 
     public void setEndDate(String endDate) {
         this.endDate = endDate;
+    }
+
+    public void nextID(Integer nextID){
+
+        nextID = advertID;
+        nextID++;
+        setAdvertID(nextID);
     }
 
  }
