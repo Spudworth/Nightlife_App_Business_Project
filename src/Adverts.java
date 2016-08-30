@@ -74,5 +74,19 @@ public class Adverts {
     public void setActive(boolean active) {
         isActive = active;
     }
+    public boolean getIsActive() {
+        return isActive;
+    }
 
- }
+    @Override
+    public String toString() {
+        return "Adverts{" +
+                "advertID=" + advertID +
+                "/n, title='" + title + '\'' +
+                "/n, description='" + description + '\'' +
+                "/n, startDate='" + startDate + '\'' +
+                "/n, endDate='" + endDate + '\'' +
+                "/n, isActive=" + isActive +
+                '}';
+    }
+}

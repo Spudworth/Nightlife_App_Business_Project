@@ -60,9 +60,24 @@ public class BusinessGUI extends JFrame implements ActionListener {
     }
 
     private void deleteAdvert() {
+
     }
 
     private void getAndAmendInfo() {
+
+        if (exampleAdvert.getIsActive() == true){
+
+            exampleAdvert.setTitle(JOptionPane.showInputDialog("Please enter amended advert title"));
+            exampleAdvert.setDescription(JOptionPane.showInputDialog("Please enter amended advert description"));
+            exampleAdvert.setStartDate(JOptionPane.showInputDialog("Please enter amended advert start date (DD/MM/YY)"));
+            exampleAdvert.setEndDate(JOptionPane.showInputDialog("Please enter amended advert end date (DD/MM/YY)"));
+        }
+
+        else
+         {
+            JOptionPane.showMessageDialog(null, "No advert to amend", "No Advert", JOptionPane.ERROR_MESSAGE);
+        }
+
     }
 
     private void inputAdvertInfo() {
