@@ -70,62 +70,35 @@ public class BusinessGUI extends JFrame implements ActionListener {
 
     private void deleteAdvert() {
 
-        if(exampleAdvert.getIsActive() == true){
-
-           if(JOptionPane.showConfirmDialog(null,"Are you sure?","Warning",JOptionPane.YES_NO_OPTION) == JOptionPane.YES_OPTION){
-               exampleAdvert.setActive(false);
-               System.exit(0);
-           }
-           else
-               System.exit(0);
-        }
-        else
-            JOptionPane.showMessageDialog(null, "No advert to delete", "No Advert", JOptionPane.ERROR_MESSAGE);
-
-        System.exit(0);
+        exampleAdvert.removeAdvert();
 
     }
+
+
 
     private void getAndAmendInfo() {
 
-        if (exampleAdvert.getIsActive() == true){
-
-            exampleAdvert.setTitle(JOptionPane.showInputDialog("Please enter amended advert title"));
-            exampleAdvert.setDescription(JOptionPane.showInputDialog("Please enter amended advert description"));
-            exampleAdvert.setStartDate(JOptionPane.showInputDialog("Please enter amended advert start date (DD/MM/YY)"));
-            exampleAdvert.setEndDate(JOptionPane.showInputDialog("Please enter amended advert end date (DD/MM/YY)"));
-
-
-        }
-
-        else
-         {
-            JOptionPane.showMessageDialog(null, "No advert to amend", "No Advert", JOptionPane.ERROR_MESSAGE);
-             System.exit(0);
-        }
+        exampleAdvert.amendAdvert();
 
     }
+
+
 
     private void inputAdvertInfo() {
-
         exampleAdvert = new Adverts();
-        exampleAdvert.nextID(exampleAdvert.getAdvertID());
-        exampleAdvert.setTitle(JOptionPane.showInputDialog("Please enter advert title"));
-        exampleAdvert.setDescription(JOptionPane.showInputDialog("Please enter advert description"));
-        exampleAdvert.setStartDate(JOptionPane.showInputDialog("Please enter advert start date (DD/MM/YY)"));
-        exampleAdvert.setEndDate(JOptionPane.showInputDialog("Please enter advert end date (DD/MM/YY)"));
-        exampleAdvert.setActive(true);
-
-
+        exampleAdvert.createAdvert();
 
     }
 
+
+
     private void displayAdvert(){
+
         textArea = new JTextArea();
+        textArea.revalidate();
         textArea.append(exampleAdvert.toString());
         cPane.add(textArea);
-        cPane.revalidate();
-        cPane.repaint();
+
     }
 
 }

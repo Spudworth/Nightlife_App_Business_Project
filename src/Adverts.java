@@ -1,3 +1,5 @@
+import javax.swing.*;
+
 /**
  * Created by Sean Healy on 29-Aug-16.
  */
@@ -87,5 +89,47 @@ public class Adverts {
                 " startDate = '" + startDate + '\n' +
                 " endDate = '" + endDate + '\n' +
                 " isActive = " + isActive;
+    }
+
+    public void createAdvert() {
+
+        nextID(getAdvertID());
+        setTitle(JOptionPane.showInputDialog("Please enter advert title"));
+        setDescription(JOptionPane.showInputDialog("Please enter advert description"));
+        setStartDate(JOptionPane.showInputDialog("Please enter advert start date (DD/MM/YY)"));
+        setEndDate(JOptionPane.showInputDialog("Please enter advert end date (DD/MM/YY)"));
+        setActive(true);
+    }
+
+    public void amendAdvert() {
+        if (getIsActive() == true){
+
+            setTitle(JOptionPane.showInputDialog("Please enter amended advert title"));
+            setDescription(JOptionPane.showInputDialog("Please enter amended advert description"));
+            setStartDate(JOptionPane.showInputDialog("Please enter amended advert start date (DD/MM/YY)"));
+            setEndDate(JOptionPane.showInputDialog("Please enter amended advert end date (DD/MM/YY)"));
+        }
+
+        else
+        {
+            JOptionPane.showMessageDialog(null, "No advert to amend", "No Advert", JOptionPane.ERROR_MESSAGE);
+            System.exit(0);
+        }
+    }
+
+    public void removeAdvert() {
+        if(getIsActive() == true){
+
+            if(JOptionPane.showConfirmDialog(null,"Are you sure?","Warning",JOptionPane.YES_NO_OPTION) == JOptionPane.YES_OPTION){
+                setActive(false);
+                System.exit(0);
+            }
+            else
+                System.exit(0);
+        }
+        else
+            JOptionPane.showMessageDialog(null, "No advert to delete", "No Advert", JOptionPane.ERROR_MESSAGE);
+
+        System.exit(0);
     }
 }
