@@ -120,4 +120,9 @@ public class BusinessGUI extends JFrame implements ActionListener {
 
     }
 
+    private void displayAdvert(){
+        textArea.append(exampleAdvert.toString());
+        cPane.add(textArea);
+    }
+
 }
