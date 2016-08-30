@@ -25,10 +25,21 @@ public class BusinessGUI extends JFrame implements ActionListener {
         cPane = getContentPane();
         setLayout(new FlowLayout());
 
-        //createButton();
+        createButtonMenu();
+    }
+
+    public void createButtonMenu(){
+        createButton = new JButton("Create Advert");
         cPane.add(createButton);
+        createButton.addActionListener(this);
+
+        amendButton = new JButton("Amend Advert");
         cPane.add(amendButton);
+        amendButton.addActionListener(this);
+
+        deleteButton = new JButton("Delete Advert");
         cPane.add(deleteButton);
+        deleteButton.addActionListener(this);
     }
 
 
