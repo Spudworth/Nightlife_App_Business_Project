@@ -83,7 +83,7 @@ public class Adverts {
     public boolean getIsActive() {
         return isActive;
     }
-    public boolean isSponsored() {
+    public boolean getIsSponsored() {
         return isSponsored;
     }
 
@@ -100,7 +100,7 @@ public class Adverts {
                 " startDate = '" + startDate + '\n' +
                 " endDate = '" + endDate + '\n' +
                 " isActive = " + isActive+ '\n' +
-                "isSponsored =" + isSponsored;
+                "IsSponsored =" + isSponsored;
     }
 
     public void createAdvert() {
@@ -124,28 +124,49 @@ public class Adverts {
     }
 
     public void amendAdvert() {
+
+        String newTitle;
+        String newDescription;
+        String newStartDate;
+        String newEndDate;
         if (getIsActive() == true){
 
-            setTitle(JOptionPane.showInputDialog("Please enter amended advert title"));
-            setDescription(JOptionPane.showInputDialog("Please enter amended advert description"));
-            setStartDate(JOptionPane.showInputDialog("Please enter amended advert start date (DD/MM/YY)"));
-            setEndDate(JOptionPane.showInputDialog("Please enter amended advert end date (DD/MM/YY)"));
-            if(JOptionPane.showConfirmDialog(null,"Would you like to sponsor your advert for extra reach?","Sponsorship",JOptionPane.YES_NO_OPTION) ==JOptionPane.YES_OPTION) {
+            newTitle = JOptionPane.showInputDialog("Please enter amended advert title");
+            if(!newTitle.equals(getTitle()) && !newTitle.equals("")){
+                setTitle(newTitle);
+            }
+
+            newDescription = JOptionPane.showInputDialog("Please enter amended advert description");
+            if(!newDescription.equals(getDescription()) && !newDescription.equals("")){
+                setDescription(newDescription);
+            }
+
+            newStartDate = JOptionPane.showInputDialog("Please enter amended advert start date (DD/MM/YY)");
+            if(!newStartDate.equals(getStartDate()) && !newStartDate.equals("")){
+                setStartDate(newStartDate);
+            }
+
+            newEndDate = JOptionPane.showInputDialog("Please enter amended advert end date (DD/MM/YY)");
+            if(!newEndDate.equals(getEndDate()) && !newEndDate.equals("")){
+                setEndDate(newEndDate);
+            }
+
+            if(JOptionPane.showConfirmDialog(null,"Would you like to sponsor your advert for extra reach?","Sponsorship",JOptionPane.YES_NO_OPTION) ==JOptionPane.YES_OPTION
+                    && getIsSponsored() == false) {
                 String creditCardNo = JOptionPane.showInputDialog("Please enter your credit card number");
                 if (creditCardNo.matches("[0-9]+") && creditCardNo.length() == 16) {
                     setSponsored(true);
                 } else
                     JOptionPane.showMessageDialog(null, "Invalid entry!", "Error", JOptionPane.ERROR_MESSAGE);
             }
-            else
-                System.exit(0);
+
 
         }
 
         else
         {
             JOptionPane.showMessageDialog(null, "No advert to amend", "No Advert", JOptionPane.ERROR_MESSAGE);
-            System.exit(0);
+
         }
     }
 
